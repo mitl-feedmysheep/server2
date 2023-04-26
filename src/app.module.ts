@@ -21,22 +21,29 @@ import {
 } from './entities';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
+console.log('NODE_ENV -->', process.env.PWD);
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath:
         process.env.NODE_ENV === 'prod'
-          ? `${process.env.PWD}/env/.env.prod`
-          : `${process.env.PWD}/env/.env.local`,
+          ? `${process.env.PWD}/src/env/.env.prod`
+          : `${process.env.PWD}/src/env/.env.local`,
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.host,
-      port: +process.env.port,
-      username: process.env.username,
-      password: process.env.password,
-      database: process.env.database,
+      // host: process.env.host,
+      // port: +process.env.port,
+      // username: process.env.username,
+      // password: process.env.password,
+      // database: process.env.database,
+      host: '127.0.0.1',
+      port: 3306,
+      username: 'root',
+      password: 'root',
+      database: 'feed_my_sheep',
       entities: [
         AuthorizationEntity,
         BodyEntity,
