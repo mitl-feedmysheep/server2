@@ -24,29 +24,29 @@ export class MemberEntity {
   memberId: number;
 
   @ManyToOne(() => ChurchEntity, (churchEntity) => churchEntity.memberList)
-  @JoinColumn({ name: 'member_id' })
+  @JoinColumn()
   church: ChurchEntity;
 
   @OneToOne(() => BodyEntity, (bodyEntity) => bodyEntity.member)
-  @JoinColumn({ name: 'member_id' })
+  @JoinColumn()
   body: BodyEntity;
 
   @OneToOne(() => CellEntity, (cellEntity) => cellEntity.member)
-  @JoinColumn({ name: 'member_id' })
+  @JoinColumn()
   cell: CellEntity;
 
   @OneToOne(
     () => CellGatheringMemberEntity,
     (cellGatheringMemberEntity) => cellGatheringMemberEntity.member,
   )
-  @JoinColumn({ name: 'member_id' })
+  @JoinColumn()
   cellGatheringMember: CellGatheringMemberEntity;
 
   @OneToOne(
     () => CellMemberEntity,
     (cellMemberEntity) => cellMemberEntity.member,
   )
-  @JoinColumn({ name: 'member_id' })
+  @JoinColumn()
   cellMember: CellMemberEntity;
 
   @OneToOne(

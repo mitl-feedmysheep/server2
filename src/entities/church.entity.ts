@@ -74,6 +74,14 @@ export class ChurchEntity {
   })
   churchDescription: string | null;
 
+  @Column('tinyint', {
+    name: 'is_valid',
+    comment: '유효 여부',
+    width: 1,
+    default: () => "'1'",
+  })
+  isValid: boolean;
+
   @ApiProperty({
     example: '2023-04-01 12:13:14',
     description: '생성일시',

@@ -26,11 +26,11 @@ async function bootstrap() {
        * disableErrorMessages: Error가 발생 했을 때 Error Message를 표시 여부 설정(true: 표시하지 않음, false: 표시함)
        *                       배포 환경에서는 true로 설정하는 걸 추천합니다.
        */
-      // whitelist: true,
-      // forbidNonWhitelisted: true,
+      whitelist: true,
+      forbidNonWhitelisted: true,
       transform: true,
       disableErrorMessages: false,
-      // validateCustomDecorators: true,
+      validateCustomDecorators: true,
     }),
   );
 
