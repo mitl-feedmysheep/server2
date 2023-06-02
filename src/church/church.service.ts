@@ -5,10 +5,7 @@ import { ChurchRepository } from './church.repository';
 export class ChurchService {
   constructor(private readonly churchRepository: ChurchRepository) {}
 
-  async getChurchList() {
-    const result = await this.churchRepository.getChurchList();
-
-    console.log('result -->', result);
-    return result;
+  getChurchList() {
+    return this.churchRepository.getChurchList();
   }
 }
