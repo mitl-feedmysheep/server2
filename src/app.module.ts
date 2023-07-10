@@ -53,8 +53,7 @@ console.log('NODE_ENV -->', process.env.PWD);
       ],
       bigNumberStrings: false,
       logging: true,
-      // 절대 변경하지 말 것.
-      synchronize: false,
+      synchronize: !!process.env.synchronize,
       namingStrategy: new SnakeNamingStrategy(),
     }),
     MemberModule,
