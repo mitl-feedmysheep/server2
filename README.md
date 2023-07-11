@@ -1,6 +1,13 @@
 # FeedMySheep
 
-## 로컬 테스트 DB 셋팅
+## 로컬 셋팅
+
+### 로컬 패키지 설치
+```console
+npm i
+```
+
+### 로컬 테스트 DB 셋팅
 
 1. docker / mysql workbench 설치
 2. mysql 8.0 설치
@@ -19,4 +26,3 @@
    ```console
    process.env.NODE_ENV === prod ? false : true 
    ```
-tst
