@@ -7,18 +7,6 @@ import { CellModule } from './cell/cell.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import * as process from 'process';
-import {
-  AuthorizationEntity,
-  BodyEntity,
-  CellEntity,
-  CellGatheringEntity,
-  CellGatheringMemberEntity,
-  CellGatheringMemberPrayerEntity,
-  CellMemberEntity,
-  ChurchEntity,
-  MemberEntity,
-  PartEntity,
-} from './entities';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 console.log('NODE_ENV -->', process.env.PWD);
@@ -39,18 +27,7 @@ console.log('NODE_ENV -->', process.env.PWD);
       username: process.env.username,
       password: process.env.password,
       database: process.env.database,
-      entities: [
-        AuthorizationEntity,
-        BodyEntity,
-        CellEntity,
-        CellGatheringEntity,
-        CellGatheringMemberEntity,
-        CellGatheringMemberPrayerEntity,
-        CellMemberEntity,
-        ChurchEntity,
-        MemberEntity,
-        PartEntity,
-      ],
+      entities: ['./node_modules/@mitl-feedmysheep/entity/**/*.entity.js'],
       bigNumberStrings: false,
       logging: true,
       synchronize: !!process.env.synchronize,

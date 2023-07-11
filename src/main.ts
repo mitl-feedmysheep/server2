@@ -6,9 +6,6 @@ import { setupSwagger } from './utils';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // swagger 셋팅
-  setupSwagger(app);
-
   app.enableCors({
     origin: true,
     methods: 'GET,PUT,POST,DELETE',
