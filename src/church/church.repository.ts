@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { RDSBaseRepository } from '../utils';
-import { ChurchEntity } from '../entities';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { ChurchEntity } from '@mitl-feedmysheep/entity';
 
 @Injectable()
 export class ChurchRepository extends RDSBaseRepository<ChurchEntity> {

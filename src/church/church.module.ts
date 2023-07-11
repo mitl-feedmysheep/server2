@@ -3,7 +3,7 @@ import { ChurchService } from './church.service';
 import { ChurchController } from './church.controller';
 import { ChurchRepository } from './church.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ChurchEntity } from '../entities';
+import { ChurchEntity } from '@mitl-feedmysheep/entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ChurchEntity])],

@@ -27,21 +27,21 @@
    docker pull mysql:8.0
    ```
 3. docker mysql container 백그라운드 실행
+
    ```console
-   docker run --name feed_my_sheep -e MYSQL_ROOT_PASSWORD=feedmysheep -d -p 3306:3306 mysql:8.0
-   ```
-4. 서버 로컬 실행
-   ```console
-   npm run start:local
-   ```
-5. entity에 따라 synchronize (production 환경이 아니라면 동기화O)
-   ```console
-   process.env.NODE_ENV === prod ? false : true
+   docker run --name feed_my_sheep -e MYSQL_ROOT_PASSWORD=feedmysheep -e MYSQL_DATABASE=feed_my_sheep -d -p 3306:3306 mysql:8.0
    ```
 
 ### 로컬 서버 구동
 
 1. 로컬에서는 로컬 DB와 연동하여 서버를 구동한다.
+
    ```console
    npm run start:local
    ```
+
+   - entity에 따라 synchronize (production 환경이 아니라면 동기화O)
+
+     ```console
+     process.env.NODE_ENV === prod ? false : true
+     ```
